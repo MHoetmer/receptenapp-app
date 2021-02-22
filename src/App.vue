@@ -1,31 +1,27 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center"></div>
-
+    <v-toolbar dense floating>
+      <v-toolbar-title class="headline text-uppercase">
+        <span>Recepten</span>
+        <span class="font-weight-light">App</span>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat>
+          <router-link to="/">Home</router-link>
+        </v-btn>
+        <v-btn flat>
+          <router-link to="/about">About</router-link>
+        </v-btn>
+        <v-btn flat>
+          <router-link to="/recepten">Recepten</router-link>
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
 
-      <v-btn>
-        <router-link to="/">Home</router-link>
-      </v-btn>
-
-      <v-btn>
-        <router-link to="/about">About</router-link>
-      </v-btn>
-
-      <v-btn text>
-        <router-link to="/recepten">Recepten</router-link>
-      </v-btn>
-    </v-app-bar>
-    <div class="recepten">
-      <v-item-group>
-        <v-item v-for="e in this.recepten" :key="e.name">
-          <router-link :to="{ name: 'Recept', params: { id: e.id } }"
-            >Recept {{ e.id }}</router-link
-          >
-        </v-item>
-      </v-item-group>
-    </div>
+    <v-content>
+      <router-view />
+    </v-content>
   </v-app>
 </template>
 
@@ -60,20 +56,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-v-item {
-  list-style-type: none;
-  padding: 0;
-
-  color: #42b983;
-}
-v-item {
-  margin: 0 10px;
-}
-v-btn {
-  color: #42b983;
-}
-</style>
+<style scoped></style>
