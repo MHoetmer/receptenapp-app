@@ -31,29 +31,9 @@ export default {
   components: {},
 
   data() {
-    return {
-      recepten: [
-        { id: 1, name: "one" },
-        { id: 2, name: "two" },
-        { id: 3, name: "three" },
-        { id: 4, name: "four" },
-        { id: 5, name: "five" },
-      ],
-    };
+    return {};
   },
-  mounted() {
-    console.log("mounted");
-    fetch("http://localhost:8080/recepten")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        for (var r = 0; r < data.length; r++) {
-          //this.recepten.add({ id: data[r].id, name: data[r].naam });
-        }
-        console.log("data!", data);
-      });
-  },
+  created() {},
 };
 </script>
 <style scoped>
