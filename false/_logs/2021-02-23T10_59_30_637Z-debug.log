@@ -1,0 +1,19 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/Users/mel/.node_modules_global/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'serve',
+1 verbose cli   '--no-cache' ]
+2 info using npm@6.9.0
+3 info using node@v10.15.3
+4 verbose run-script [ 'preserve', 'serve', 'postserve' ]
+5 info lifecycle receptenapp-app@0.1.0~preserve: receptenapp-app@0.1.0
+6 info lifecycle receptenapp-app@0.1.0~serve: receptenapp-app@0.1.0
+7 verbose lifecycle receptenapp-app@0.1.0~serve: unsafe-perm in lifecycle true
+8 verbose lifecycle receptenapp-app@0.1.0~serve: PATH: /Users/mel/.node_modules_global/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/mel/Projects/javascript/receptenapp-app/node_modules/.bin:/usr/local/opt/openjdk/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/mel/.node_modules_global/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/opt/openjdk/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/mel/.node_modules_global/bin
+9 verbose lifecycle receptenapp-app@0.1.0~serve: CWD: /Users/mel/Projects/javascript/receptenapp-app
+10 silly lifecycle receptenapp-app@0.1.0~serve: Args: [ '-c', 'vue-cli-service serve --port 9090' ]
+11 timing npm Completed in 1011132ms
+12 error cb() never called!
+13 error This is an error with npm itself. Please report this error at:
+14 error <https://npm.community>

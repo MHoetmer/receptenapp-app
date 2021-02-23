@@ -2,22 +2,21 @@
   <v-container>
     <v-row class="text-center">
       <v-col class="mb-4">
-        <h1>This is a recepten list</h1>
-        <v-item-group>
-          <v-item v-for="(v, i) in recepten" :key="v.id">
-            <a>Recept {{ v.naam }} {{ i }}</a>
-          </v-item>
-        </v-item-group>
+        <h1>Jouw recepten</h1>
       </v-col>
     </v-row>
+
+    <recepten-table v-if="recepten" :data="recepten" />
   </v-container>
 </template>
 
 <script>
+import ReceptenTable from "../components/ReceptenTable.vue";
 export default {
+  components: { ReceptenTable },
   data() {
     return {
-      recepten: [{ id: 1, naam: "one" }],
+      recepten: [],
     };
   },
   created() {
