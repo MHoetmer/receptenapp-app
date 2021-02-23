@@ -1,16 +1,20 @@
 <template>
-  <div class="recepten">
-    <h1>This is a recepten list</h1>
+  <v-container>
+    <v-row class="text-center">
+      <v-col class="mb-4">
+        <h1>This is a recepten list</h1>
 
-    <v-item-group>
-      <v-item v-for="e in this.recepten" :key="e.name">
-        <br />
-        <router-link :to="{ name: 'Recept', params: { id: e.id } }"
-          >Recept {{ e.id }}</router-link
-        >
-      </v-item>
-    </v-item-group>
-  </div>
+        <v-item-group>
+          <v-item v-for="e in this.recepten" :key="e.name">
+            <br />
+            <router-link :to="{ name: 'Recept', params: { id: e.id } }"
+              >Recept {{ e.id }}</router-link
+            >
+          </v-item>
+        </v-item-group>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
