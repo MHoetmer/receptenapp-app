@@ -10,7 +10,7 @@
       sort-by="naam"
     >
       <template #item.naam="{ item }">
-        <router-link :to="`/recept/${item.id}`">
+        <router-link :to="`/recept/${item.id}`" class="link">
           {{ item.naam }}
         </router-link>
       </template>
@@ -98,3 +98,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.link {
+  font: roboto !important;
+  color: rgb(104, 57, 183) !important;
+  text-decoration: none;
+}
+</style>

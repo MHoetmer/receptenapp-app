@@ -2,17 +2,17 @@
   <v-container>
     <v-row class="text-center">
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank"
-            >Discord Community</a
-          >
-        </p>
+        <br />
+        <v-container>
+          <v-row align="center" justify="center" v-if="number > 0">
+            <v-img
+              :src="require(`@/assets/image${this.number}.jpg`)"
+              max-width="60%"
+              alt="Het hoofd en de romp van een geslagen mannetje;
+          het vrouwtje heeft een groot hoofd en lange scherpe tanden"
+            ></v-img>
+          </v-row>
+        </v-container>
       </v-col>
     </v-row>
   </v-container>
@@ -21,59 +21,23 @@
 <script>
 export default {
   name: "HelloWorld",
-
-  data: () => ({
-    ecosystem: [
-      {
-        text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader",
-      },
-      {
-        text: "github",
-        href: "https://github.com/vuetifyjs/vuetify",
-      },
-      {
-        text: "awesome-vuetify",
-        href: "https://github.com/vuetifyjs/awesome-vuetify",
-      },
-    ],
-    importantLinks: [
-      {
-        text: "Documentation",
-        href: "https://vuetifyjs.com",
-      },
-      {
-        text: "Chat",
-        href: "https://community.vuetifyjs.com",
-      },
-      {
-        text: "Made with Vuetify",
-        href: "https://madewithvuejs.com/vuetify",
-      },
-      {
-        text: "Twitter",
-        href: "https://twitter.com/vuetifyjs",
-      },
-      {
-        text: "Articles",
-        href: "https://medium.com/vuetify",
-      },
-    ],
-    whatsNext: [
-      {
-        text: "Explore components",
-        href: "https://vuetifyjs.com/components/api-explorer",
-      },
-      {
-        text: "Select a layout",
-        href: "https://vuetifyjs.com/getting-started/pre-made-layouts",
-      },
-      {
-        text: "Frequently Asked Questions",
-        href:
-          "https://vuetifyjs.com/getting-started/frequently-asked-questions",
-      },
-    ],
-  }),
+  data() {
+    return { number: 8, min: 1, max: 9 };
+  },
+  mounted() {
+    this.getRandomNumber();
+  },
+  created() {
+    this.getRandomNumber();
+  },
+  methods: {
+    getRandomNumber: function() {
+      this.number = this.generateNumber();
+      this.$forceUpdate();
+    },
+    generateNumber: function() {
+      return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+    },
+  },
 };
 </script>

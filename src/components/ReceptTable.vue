@@ -1,6 +1,5 @@
 <template>
   <div>
-    <a>TABLE</a>
     <v-data-table
       :headers="headers"
       :items="recept.ingredienten"
@@ -11,7 +10,7 @@
       sort-by="naam"
     >
       <template #item.naam="{ item }">
-        <router-link :to="`/ingredient/${item.id}`">
+        <router-link :to="`/ingredient/${item.id}`" class="link">
           {{ item.naam }}
         </router-link>
       </template>
@@ -46,10 +45,10 @@ export default {
           value: "naam",
         },
         {
-          text: "Kosten",
+          text: "Hoeveelheid",
           align: "start",
           sortable: true,
-          value: "kosten",
+          value: "hoeveelheid",
         },
       ];
     },
@@ -69,3 +68,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.link {
+  font: roboto !important;
+  color: rgb(104, 57, 183) !important;
+  text-decoration: none;
+}
+</style>
