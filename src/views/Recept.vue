@@ -13,6 +13,9 @@
 
 <script>
 import ReceptTable from "../components/ReceptTable.vue";
+import axios from "axios";
+import authHeader from "../services/auth-header";
+
 export default {
   components: { ReceptTable },
   data() {
@@ -29,10 +32,12 @@ export default {
   methods: {
     async fetchData() {
       var vm = this;
-      const res = await fetch(
-        `http://localhost:8080/recept/${vm.$route.params.id}`
-      ).catch((err) => console.log("ERR" + err));
-      const data = await res.json();
+      const res = await axios.get(
+        `http://localhost:8080/recept/${vm.$route.params.id}`,
+        { headers: authHeader() }
+      );
+
+      const data = await res.data;
       this.$forceUpdate();
       vm.recept = data;
     },

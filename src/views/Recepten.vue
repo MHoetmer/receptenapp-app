@@ -12,6 +12,9 @@
 
 <script>
 import ReceptenTable from "../components/ReceptenTable.vue";
+import axios from "axios";
+import authHeader from "../services/auth-header";
+
 export default {
   components: { ReceptenTable },
   data() {
@@ -28,9 +31,10 @@ export default {
   methods: {
     fetchData() {
       var vm = this;
-      fetch("http://localhost:8080/recepten")
+      axios
+        .get("http://localhost:8080/recepten", { headers: authHeader() })
         .then(function(response) {
-          return response.json();
+          return response.data;
         })
         .then(function(data) {
           vm.recepten = data;
